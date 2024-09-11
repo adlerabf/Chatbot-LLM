@@ -4,6 +4,7 @@ langchain==0.0.341
 ctransformers
 transformers
 streamlit
+chromadb
 librosa
 pyyaml
 torch
