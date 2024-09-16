@@ -1,6 +1,6 @@
 model_path:
   small: "./models/mistral-7b-instruct-v0.1.Q3_K_M.gguf"
-  large: "models/mistral-7b-instruct-v0.1.Q5_K_M.gguf'"
+  large: "./models/mistral-7b-instruct-v0.1.Q5_K_M.gguf"
 
 model_type: "mistral"
 
