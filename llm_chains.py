@@ -4,8 +4,8 @@ from langchain.embeddings import HuggingFaceInstructEmbeddings
 from langchain.memory import ConversationBufferWindowMemory
 from langchain.prompts import PromptTemplate
 from langchain.llms import CTransformers
-# from langchain.vectorstores import Chroma
-# import chromadb
+from langchain.vectorstores import Chroma
+import chromadb
 import yaml
 
 with open("config.yaml", "r") as f:
@@ -29,6 +29,15 @@ def create_llm_chain(llm, chat_prompt, memory):
 
 def load_normal_chain(chat_history):
     return chatChain(chat_history)
+
+def load_vectordb(embeddings):
+    persistent_client = chromadb.PersistentClient("chroma_db")
+    langchain_chroma = Chroma(
+        client=persistent_client,
+        collection_name="pdfs",
+        embedding_function=embeddings
+    )
+    return langchain_chroma
 
 class chatChain:
     def __init__(self, chat_history):
