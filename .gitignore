@@ -1,6 +1,6 @@
 # My Gitignore
 models/
-
+chat_sessions/
 ### General Gitignore ###
 
 # Byte-compiled / optimized / DLL files
