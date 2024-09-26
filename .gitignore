@@ -1,6 +1,7 @@
 # My Gitignore
 models/
 chat_sessions/
+chroma_db/
 
 ### General Gitignore ###
 
