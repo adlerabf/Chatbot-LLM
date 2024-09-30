@@ -34,3 +34,13 @@ def handle_image(image_bytes, user_message):
     print(output)
     return output["choices"][0]["message"]["content"]
 
+def convert_image_to_base64(image_path):
+    with open(image_path, "rb") as image_file:
+        encoded_string = base64.b64encode(image_file.read()).decode("utf-8")
+        return "data:image/jpeg;base64," + encoded_string
+
+if __name__ == "__main__":
+    image_path = "llama.jpg"
+    image_base64 = convert_image_to_base64(image_path)
+    with open("image.txt", "w") as f:
+        f.write(image_base64)
