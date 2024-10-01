@@ -8,4 +8,4 @@ chromadb
 librosa
 pyyaml
 torch
-protobuf==3.19.x
+protobuf==3.19
